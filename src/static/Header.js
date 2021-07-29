@@ -2,6 +2,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 import MyflixLogo4 from "./MyflixLogo4.png";
 import "../styles/header.css";
+import axios from "axios";
 
 const Header = () => {
   const [userState, setUserState] = useState({});
@@ -12,17 +13,21 @@ const Header = () => {
 
   const postUser = () => {
     let data = userState;
-    fetch("https://erin-spring-backend.herokuapp.com/users/post/google", {
-      method: "POST",
-      credentials: "include",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => { console.log(json); setUserState(json) })
-    // .then((json) => console.log(json));
+    // fetch("https://erin-spring-backend.herokuapp.com/users/post/google", {
+    //   method: "POST",
+    //   credentials: "include",
+    //   body: JSON.stringify(data),
+    //   headers: {
+    //     "Content-Type": "application/json",
+
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((json) => { console.log(json); setUserState(json) })
+    // // .then((json) => console.log(json));
+
+    axios.post("https://erin-spring-backend.herokuapp.com/users/post/google", JSON.stringify(data))
+      .then(response => console.log(response))
   };
 
   return (

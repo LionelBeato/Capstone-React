@@ -24,6 +24,7 @@ const Test = () => {
     let data = userState;
     fetch("https://erin-spring-backend.herokuapp.com/oauth2/authorization/google", {
       method: "POST",
+      cache: "default",
       credentials: "include",
       body: JSON.stringify(data),
       headers: {
