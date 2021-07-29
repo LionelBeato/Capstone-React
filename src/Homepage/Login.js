@@ -13,7 +13,7 @@ const Login = () => {
       </div>
       <a
         className="button-link"
-        href="https://movie-app-backend-win.herokuapp.com/oauth2/authorization/google"
+        href="https://erin-spring-backend.herokuapp.com/oauth2/authorization/google"
       >
         <div id="buttonSign" className="rowLogin">
           <button>Sign in with Google</button>
