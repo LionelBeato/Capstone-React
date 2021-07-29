@@ -4,14 +4,14 @@ import { ResponsiveEmbed } from "react-bootstrap";
 const Test = () => {
   const [userState, setUserState] = useState({});
 
-  useEffect(() => {
-    // getUser();
-    postUser();
-  }, []);
+  // useEffect(() => {
+  //   // getUser();
+  //   postUser();
+  // }, []);
 
   //not actually using this right now, using post response
   const getUser = () => {
-    fetch("http://localhost:8080/users/login", {
+    fetch("https://erin-spring-backend.herokuapp.com/oauth2/authorization/google", {
       method: "GET",
       credentials: "include",
     })
@@ -22,7 +22,7 @@ const Test = () => {
 
   const postUser = () => {
     let data = userState;
-    fetch("http://localhost:8080/users/post/google", {
+    fetch("https://erin-spring-backend.herokuapp.com/oauth2/authorization/google", {
       method: "POST",
       credentials: "include",
       body: JSON.stringify(data),
@@ -42,7 +42,7 @@ const Test = () => {
     <div>
       <button onClick={getUser}>TEST</button>
       <button onClick={postUser}>POST</button>
-      <a href="http://localhost:8080/oauth2/authorization/google">
+      <a href="https://erin-spring-backend.herokuapp.com/oauth2/authorization/google">
         <button>Click me</button>
       </a>
       Welcome {userState.username}
