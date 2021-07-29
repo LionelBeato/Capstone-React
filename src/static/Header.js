@@ -21,8 +21,8 @@ const Header = () => {
       },
     })
       .then((response) => response.json())
-      .then((json) => setUserState(json))
-      .then((json) => console.log(json));
+      .then((json) => { console.log(json); setUserState(json) })
+    // .then((json) => console.log(json));
   };
 
   return (
