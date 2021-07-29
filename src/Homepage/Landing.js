@@ -12,12 +12,13 @@ const Landing = () => {
   }, []);
 
   const getUser = () => {
-    fetch("http://localhost:8080/users/login", {
+    fetch("https://erin-spring-backend.herokuapp.com/users/login", {
       method: "GET",
       credentials: "include",
     })
       .then((response) => response.json())
       .then((json) => {
+        console.log(json)
         setAuthState(json.hasOwnProperty("id"));
       });
   };
