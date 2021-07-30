@@ -3,6 +3,8 @@ import MyflixLogo4 from "../static/MyflixLogo4.png";
 import "../styles/login.css";
 import videos from "../styles/videos.mp4";
 import GoogleLogin from 'react-google-login';
+import { BACKEND_URL } from "../constants";
+
 
 const Login = () => {
 
@@ -11,15 +13,15 @@ const Login = () => {
   //   localStorage.setItem("token", response.tokenId)
   // }
 
-  const login = () => {
-    fetch("https://erin-spring-backend.herokuapp.com/users/oidc-principal",
-      {
-        method: "GET",
-        credentials: "include",
-      })
-      .then(response => console.log(response))
-    // .then(json => console.log(json))
-  }
+  // const login = () => {
+  //   fetch("https://erin-spring-backend.herokuapp.com/users/oidc-principal",
+  //     {
+  //       method: "GET",
+  //       credentials: "include",
+  //     })
+  //     .then(response => console.log(response))
+  //   // .then(json => console.log(json))
+  // }
   return (
     <div id="loginform">
       <video autoPlay loop muted={true} height="150px" width="300px">
@@ -37,7 +39,7 @@ const Login = () => {
       /> */}
       <a
         className="button-link"
-        href="https://erin-spring-backend.herokuapp.com/oauth2/authorization/google"
+        href={`${BACKEND_URL}/oauth2/authorization/google`}
       >
         <div id="buttonSign" className="rowLogin">
           <button>Sign in with Google</button>

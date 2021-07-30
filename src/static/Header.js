@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import MyflixLogo4 from "./MyflixLogo4.png";
 import "../styles/header.css";
 import axios from "axios";
+import { BACKEND_URL } from "../constants";
+
 
 const Header = () => {
   const [userState, setUserState] = useState({});
@@ -13,21 +15,20 @@ const Header = () => {
 
   const postUser = () => {
     let data = userState;
-    // fetch("https://erin-spring-backend.herokuapp.com/users/post/google", {
-    //   method: "POST",
-    //   credentials: "include",
-    //   body: JSON.stringify(data),
-    //   headers: {
-    //     "Content-Type": "application/json",
+    fetch(`${BACKEND_URL}/users/post/google`, {
+      method: "POST",
+      credentials: "include",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
 
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((json) => { console.log(json); setUserState(json) })
-    // // .then((json) => console.log(json));
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => { setUserState(json) })
 
-    axios.post("https://erin-spring-backend.herokuapp.com/users/post/google", JSON.stringify(data))
-      .then(response => console.log(response))
+    // axios.post(`${BACKEND_URL}/users/post/google`, JSON.stringify(data))
+    //   .then(response => console.log(response))
   };
 
   return (
@@ -57,7 +58,7 @@ const Header = () => {
             <Nav.Link className="user text-warning pb-0">
               <p class="text-warning">Logged in as: {userState.username}</p>
             </Nav.Link>
-            <Nav.Link href="https://erin-spring-backend.herokuapp.com/logout">Logout</Nav.Link>
+            <Nav.Link href={`${BACKEND_URL}/logout`}>Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

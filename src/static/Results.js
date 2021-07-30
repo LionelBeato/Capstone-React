@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BACKEND_URL } from "../constants";
 import "../styles/results.css";
 
 const Results = ({ movieState, back, backButtState }) => {
@@ -9,7 +10,7 @@ const Results = ({ movieState, back, backButtState }) => {
   }, []);
 
   async function getUser() {
-    const response = await fetch("https://erin-spring-backend.herokuapp.com/users/login", {
+    const response = await fetch(`${BACKEND_URL}/users/login`, {
       method: "GET",
       credentials: "include",
     });
@@ -36,7 +37,7 @@ const Results = ({ movieState, back, backButtState }) => {
       }
     }
 
-    const response = await fetch("https://erin-spring-backend.herokuapp.com/users/favorites", {
+    const response = await fetch(`${BACKEND_URL}/users/favorites`, {
       method: "POST",
       credentials: "include",
       body: JSON.stringify(user),

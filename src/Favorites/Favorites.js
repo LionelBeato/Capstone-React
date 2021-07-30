@@ -5,6 +5,7 @@ import "../styles/favorites.css";
 import { Row, Col, Container } from "react-bootstrap";
 import noMovieTrans from "../static/noMovieTrans.png";
 import Results from "../static/Results";
+import { BACKEND_URL } from "../constants";
 
 const Favorites = () => {
   const [listState, setListState] = useState([]);
@@ -19,7 +20,7 @@ const Favorites = () => {
   }, [renderState]);
 
   async function getFavorites() {
-    const response = await fetch("https://erin-spring-backend.herokuapp.com/users/login", {
+    const response = await fetch(`${BACKEND_URL}/users/login`, {
       method: "GET",
       credentials: "include",
     });
@@ -50,7 +51,7 @@ const Favorites = () => {
     const movieIndex = favorites.indexOf(movie.id);
     favorites.splice(movieIndex, 1);
 
-    const response = await fetch("http://localhost:8080/users/favorites", {
+    const response = await fetch(`${BACKEND_URL}/users/favorites`, {
       method: "POST",
       credentials: "include",
       body: JSON.stringify(user),

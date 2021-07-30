@@ -4,6 +4,7 @@ import Login from "./Login";
 import Search from "./Search";
 import Header from "../static/Header";
 import axios from "axios";
+import { BACKEND_URL } from "../constants";
 
 const Landing = () => {
   const [authState, setAuthState] = useState(false);
@@ -13,7 +14,7 @@ const Landing = () => {
   }, []);
 
   const getUser = () => {
-    fetch("https://erin-spring-backend.herokuapp.com/users/login", {
+    fetch(`${BACKEND_URL}/users/login`, {
       method: "GET",
       credentials: "include",
 
