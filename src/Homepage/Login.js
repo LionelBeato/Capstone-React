@@ -7,7 +7,7 @@ import GoogleLogin from 'react-google-login';
 const Login = () => {
 
   const responseGoogle = (response) => {
-    console.log(response);
+    localStorage.setItem("token", response.tokenId)
   }
 
   const login = () => {
@@ -16,7 +16,7 @@ const Login = () => {
         method: "GET",
         credentials: "include",
         headers: {
-          
+
         }
       })
       .then(response => console.log(response))
