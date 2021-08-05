@@ -5,6 +5,8 @@ import Search from "./Search";
 import Header from "../static/Header";
 import axios from "axios";
 import { BACKEND_URL } from "../constants";
+import { Link, Redirect } from "react-router-dom";
+import { App } from "../App";
 
 const Landing = () => {
   const [authState, setAuthState] = useState(false);
@@ -29,8 +31,9 @@ const Landing = () => {
 
   return (
     <div>
+      {/* <Link to="/test">test</Link> */}
       {authState ? <Header /> : <div></div>}
-      {authState ? <Search /> : <Login />}
+      {authState ? <Redirect to="/search" /> : <Login />}
     </div>
   );
 };

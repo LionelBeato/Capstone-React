@@ -7,6 +7,7 @@ import Search from './Homepage/Search';
 import Favorites from './Favorites/Favorites';
 import Modal from './Homepage/Modal';
 import Test from './test';
+import Header from './static/Header';
 
 
 
