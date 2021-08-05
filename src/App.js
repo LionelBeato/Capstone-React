@@ -14,11 +14,11 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={Landing} render />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/favorites" component={Favorites} />
-        <Route exact path="/search" component={Search} />
-        <Route exact path="/test" component={Test} />
+        <Route exact path="/" component={Landing} />
+        <Route path="/login" component={Login} />
+        <Route path="/favorites" component={Favorites} />
+        <Route path="/search" component={Search} />
+        <Route path="/test" component={Test} />
       </Switch>
 
     </div>
