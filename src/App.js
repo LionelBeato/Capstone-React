@@ -19,7 +19,6 @@ function App() {
         <Route exact path="/favorites" component={Favorites} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/test" component={Test} />
-
       </Switch>
 
     </div>
