@@ -4,6 +4,7 @@ import MyflixLogo4 from "./MyflixLogo4.png";
 import "../styles/header.css";
 import axios from "axios";
 import { BACKEND_URL } from "../constants";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -48,8 +49,8 @@ const Header = () => {
           className="justify-content-start"
         >
           <Nav>
-            <Nav.Link href="/">Search</Nav.Link>
-            <Nav.Link href="/favorites">Favorites</Nav.Link>
+            <Nav.Link ><Link to="/search">Search</Link></Nav.Link>
+            <Nav.Link><Link to="/favorites">Favorites</Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
 
