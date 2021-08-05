@@ -8,7 +8,7 @@ import { BrowserRouter, HashRouter } from 'react-router-dom';
 ReactDOM.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
     <App />
-  </Br>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
